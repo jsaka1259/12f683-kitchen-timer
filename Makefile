@@ -3,9 +3,7 @@ CHIP   := 12F683
 
 
 SRCDIR := src
-CMNDIR := $(SRCDIR)/common
-SRCS   := $(SRCDIR)/*.c
-SRCS   += $(CMNDIR)/*.c
+SRCS   := $(shell find $(SRCDIR) -type f -name *.c)
 OUTDIR := build
 BIN    := $(OUTDIR)/$(HEX).hex
 LOGS   := log.* MPLABXLog.xml*
